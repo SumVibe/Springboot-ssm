@@ -25,4 +25,7 @@ public interface UserInfoService {
 
     //删除一条数据库记录
     int deleteUser(Integer id);
+
+    //插入一个集合数据
+    void addUsers(List list);
 }

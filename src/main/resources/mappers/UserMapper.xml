@@ -32,6 +32,18 @@
      VALUES
 	(#{id}, #{name}, #{age})
     </insert>
+    <!--循环遍历插入一个集合数据-->
+    <insert id="addUsers" parameterType="java.util.List">
+    INSERT INTO users
+    (id,name,age)
+    VALUES
+    <foreach collection="list" item="item" index="index" separator=",">
+       (#{item.id},
+        #{item.name},
+        #{item.age}
+        )
+    </foreach>
+    </insert>
     <!--删除表中的某一条记录数据-->
     <delete id="deleteUser" parameterType="java.lang.Integer">
        DELETE FROM users WHERE id = #{id}

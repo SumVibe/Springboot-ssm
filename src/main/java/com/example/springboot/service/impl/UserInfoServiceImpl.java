@@ -50,4 +50,9 @@ public class UserInfoServiceImpl implements UserInfoService {
         int i = userInfoDao.deleteUser(id);
         return i;
     }
+
+    @Override
+    public void addUsers(List list) {
+        userInfoDao.addUsers(list);
+    }
 }

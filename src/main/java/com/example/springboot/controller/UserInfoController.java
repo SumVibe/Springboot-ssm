@@ -53,22 +53,36 @@ public class UserInfoController {
     @RequestMapping(value = "/insertUser",method = RequestMethod.POST,produces = "application/json")
     public void insertUser(UserInfo user) {
         userInfoService.insertUser(user);
-        if (log.isInfoEnabled()) {
+       /* if (log.isInfoEnabled()) {
             log.info("数据插入成功");
         } else {
             log.info("数据插入失败");
-        }
+        }*/
     }
 
     //删除某一条记录数据
     @RequestMapping(value = "/deleteUser",method = RequestMethod.POST)
     public int deleteUser(Integer id) {
         int i = userInfoService.deleteUser(id);
-        if (i == 1) {
+        /*if (i == 1) {
             log.info("数据删除成功");
         } else {
             log.info("数据删除失败");
-        }
+        }*/
         return i;
+    }
+
+    //添加一个集合数据
+    @RequestMapping(value = "/addUsers",method = RequestMethod.POST)
+    public void addUsers(List list) {
+        try {
+            userInfoService.addUsers(list);
+            /*log.info("数据集合插入成功");*/
+            System.out.println("数据集合插入成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+           /* log.info("数据集合插入失败");*/
+            System.out.println("数据集合插入失败");
+        }
     }
 }
