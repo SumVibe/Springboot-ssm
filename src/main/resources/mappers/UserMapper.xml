@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.springboot.dao.UserInfoDao">
+    <!--查询所有 用户数据-->
+    <select id="getUsers"  resultType="com.example.springboot.domain.UserInfo">
+         SELECT * FROM  users;
+    </select>
+ <!--根据用户id查找某个具体的用户的一条记录数据-->
+    <select id="getUser" parameterType="java.lang.Integer" resultType="com.example.springboot.domain.UserInfo">
+        SELECT
+        id,
+        name,
+        age
+        FROM
+        users
+        WHERE
+        id = #{id}
+    </select>
+    <!--更新数据库中的某一条记录-->
+    <update id="updateUser" parameterType="com.example.springboot.domain.UserInfo" >
+        UPDATE users SET
+        users.name=#{name},
+        users.age=#{age}
+        where
+        users.id = #{id}
+    </update>
+    <!--数据插入，插入一条记录数据-->
+    <insert id="insertUser" parameterType="com.example.springboot.domain.UserInfo">
+     INSERT INTO users (id, NAME, age)
+     VALUES
+	(#{id}, #{name}, #{age})
+    </insert>
+    <!--删除表中的某一条记录数据-->
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+       DELETE FROM users WHERE id = #{id}
+    </delete>
+</mapper>
