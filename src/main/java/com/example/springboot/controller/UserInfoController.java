@@ -61,7 +61,7 @@ public class UserInfoController {
     }
 
     //删除某一条记录数据
-    @RequestMapping(value = "/deleteUser",method = RequestMethod.POST,produces = "applation/json")
+    @RequestMapping(value = "/deleteUser",method = RequestMethod.POST)
     public int deleteUser(Integer id) {
         int i = userInfoService.deleteUser(id);
         if (i == 1) {
