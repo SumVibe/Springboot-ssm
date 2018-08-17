@@ -20,6 +20,7 @@ public class SpringbootApplicationTests {
 	@Autowired
 	private UserInfoService userInfoService;
 
+	//更新 数据库中记录的测试方法
 	@Test
 	public void contextLoads() {
 		UserInfo userInfo = new UserInfo();
@@ -43,17 +44,17 @@ public class SpringbootApplicationTests {
 	   UserInfo user1 = new UserInfo();
 	   UserInfo user2 = new UserInfo();
 	   UserInfo user3 = new UserInfo();
-	   user1.setId(28);
-	   user1.setName("叶惠美");
-	   user1.setAge(9);
+	   user1.setId(100);
+	   user1.setName("十一月的肖邦");
+	   user1.setAge(10);
 
-	   user2.setId(29);
-	   user2.setName("摩羯座");
+	   user2.setId(110);
+	   user2.setName("不能说的秘密");
 	   user2.setAge(15);
 
-	   user3.setId(30);
+	   user3.setId(120);
 	   user3.setName("七里香");
-	   user3.setAge(48);
+	   user3.setAge(1221);
 	   list.add(user1);
 	   list.add(user2);
 	   list.add(user3);
@@ -65,7 +66,22 @@ public class SpringbootApplicationTests {
 		   e.printStackTrace();
 		   System.out.println("集合添加失败");
 	   }
-
-
    }
+
+	//测试根据特定的属性来进行查找某一条记录
+	@Test
+	public void findUserTest() {
+
+		UserInfo userInfo = new UserInfo();
+		//userInfo.setName("秘密");
+		userInfo.setAge(1221);
+		try {
+			UserInfo user = userInfoService.getUser(userInfo);
+			System.out.println("数据查找成功，用户为："+user);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("数据查找失败");
+		}
+
+	}
 }

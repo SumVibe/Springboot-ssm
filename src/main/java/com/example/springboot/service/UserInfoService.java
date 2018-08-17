@@ -14,8 +14,8 @@ public interface UserInfoService {
     //查询所有用户的信息
     List<UserInfo> getUsers();
 
-    //查询某一条记录信息
-    UserInfo getUser(Integer id);
+    //根据特定的一个属性值来查找某一条记录
+    UserInfo getUser(UserInfo userInfo);
 
     //更新某一条记录
     void updateUser(UserInfo user);

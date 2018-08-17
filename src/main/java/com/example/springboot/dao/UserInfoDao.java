@@ -17,7 +17,7 @@ public interface UserInfoDao {
     //用户信息查询接口
     List<UserInfo> getUsers();
     //通过id查询某一条记录信息
-    UserInfo getUser(Integer id);
+    UserInfo getUser(UserInfo userInfo);
     //更新某一条记录中的某个字段值
     void updateUser(UserInfo user);
     //数据库中添加一条记录数据

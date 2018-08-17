@@ -29,8 +29,8 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public UserInfo getUser(Integer id) {
-        UserInfo user = userInfoDao.getUser(id);
+    public UserInfo getUser(UserInfo userInfo) {
+        UserInfo user = userInfoDao.getUser(userInfo);
         return user;
     }
 

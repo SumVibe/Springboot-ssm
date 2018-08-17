@@ -28,8 +28,8 @@ public class UserInfoController {
     }
     //通过用户id查询到某个用户的信息
    @RequestMapping(value = "/getUser")
-    public UserInfo getUser(Integer id) {
-       UserInfo user = userInfoService.getUser(id);
+    public UserInfo getUser(UserInfo userInfo) {
+       UserInfo user = userInfoService.getUser(userInfo);
        return user;
     }
 

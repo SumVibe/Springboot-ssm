@@ -7,16 +7,25 @@
     <select id="getUsers"  resultType="com.example.springboot.domain.UserInfo">
          SELECT * FROM  users;
     </select>
- <!--根据用户id查找某个具体的用户的一条记录数据-->
-    <select id="getUser" parameterType="java.lang.Integer" resultType="com.example.springboot.domain.UserInfo">
+ <!--可以通过任意的条件信息来进行过滤查询-->
+    <select id="getUser" parameterType="com.example.springboot.domain.UserInfo" resultType="com.example.springboot.domain.UserInfo">
         SELECT
         id,
         name,
         age
         FROM
         users
-        WHERE
-        id = #{id}
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="name != null">
+                and name like "%"#{name}"%"
+            </if>
+            <if test="age != null">
+                and age = ${age}
+            </if>
+        </where>
     </select>
     <!--更新数据库中的某一条记录-->
     <update id="updateUser" parameterType="com.example.springboot.domain.UserInfo" >
@@ -32,20 +41,26 @@
      VALUES
 	(#{id}, #{name}, #{age})
     </insert>
-    <!--循环遍历插入一个集合数据-->
-    <insert id="addUsers" parameterType="java.util.List">
-    INSERT INTO users
-    (id,name,age)
-    VALUES
-    <foreach collection="list" item="item" index="index" separator=",">
-       (#{item.id},
+
+    <!--循环遍历插入一个集合数据--><!--删除表中的某一条记录数据-->
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        DELETE FROM users WHERE id = #{id}
+    </delete>
+    <insert id="addUsers" parameterType="List">
+        INSERT INTO users
+        (id,name,age)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+        (#{item.id},
         #{item.name},
         #{item.age}
         )
     </foreach>
     </insert>
-    <!--删除表中的某一条记录数据-->
-    <delete id="deleteUser" parameterType="java.lang.Integer">
-       DELETE FROM users WHERE id = #{id}
-    </delete>
+    <!--插入一个map类型的数据-->
+    <!--<insert id="addUserMap" parameterType="java.util.Map" >
+
+
+    </insert>-->
+
 </mapper>
