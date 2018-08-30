@@ -44,15 +44,15 @@ public class SpringbootApplicationTests {
 	   UserInfo user1 = new UserInfo();
 	   UserInfo user2 = new UserInfo();
 	   UserInfo user3 = new UserInfo();
-	   user1.setId(100);
+	   user1.setId(101);
 	   user1.setName("十一月的肖邦");
 	   user1.setAge(10);
 
-	   user2.setId(110);
+	   user2.setId(111);
 	   user2.setName("不能说的秘密");
 	   user2.setAge(15);
 
-	   user3.setId(120);
+	   user3.setId(121);
 	   user3.setName("七里香");
 	   user3.setAge(1221);
 	   list.add(user1);
