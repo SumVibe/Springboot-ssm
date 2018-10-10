@@ -24,7 +24,6 @@ public interface UserInfoDao {
     void insertUser(UserInfo user);
     //删除数据库中的一条记录数据
     int deleteUser(Integer id);
-
     //向数据库中添加一个list集合
     void addUsers(List list);
 }

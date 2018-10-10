@@ -24,9 +24,8 @@ mybatis:
 # mybatis执行SQL语句的配置
 logging:
   level:
-    com:
-    looedu:
-       mapper: debug
+    com.simons.cn.springbootdemo.dao.system:
+      debug
 
 
 
