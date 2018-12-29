@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset= "utf8">
+    <title>图形动画</title>
+    <link rel = "stylesheet" type = "text/css" href = "">
+    <style type = "text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #a{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #f3e9e0;
+            border-radius: 50%;
+            left: 400px;
+            top: 200px;
+        }
+        #a div{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.5s;
+            left: 0px;
+            top: 0px;
+        }
+        #a :nth-child(1){
+            background-color: #c1d4ed;
+        }
+        #a :nth-child(2){
+            background-color: #7d6e69;
+        }
+        #a :nth-child(3){
+            background-color: #dad6d5;
+        }
+        #a :nth-child(4){
+            background-color: #caaa9d;
+        }
+        #a :nth-child(5){
+            background-color: #6bdeff;
+        }
+        #a:hover :nth-child(1){
+            left: 150px;
+            top: -150px;
+        }
+        #a:hover :nth-child(2){
+            left: 150px;
+            top: 150px;
+        }
+        #a:hover :nth-child(3){
+            left: 300px;
+            top: -150px;
+        }
+        #a:hover :nth-child(4){
+            left: 300px;
+            top: 150px;
+        }
+        #a:hover :nth-child(5){
+            left: 450px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+<div id = 'a'>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>

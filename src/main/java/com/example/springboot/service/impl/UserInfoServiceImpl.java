@@ -1,5 +1,6 @@
 package com.example.springboot.service.impl;
 import com.example.springboot.dao.UserInfoDao;
+import com.example.springboot.domain.User;
 import com.example.springboot.domain.UserInfo;
 import com.example.springboot.service.UserInfoService;
 import org.springframework.stereotype.Service;
@@ -35,6 +36,12 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
+    public UserInfo checkUser(User user) {
+        UserInfo user1= userInfoDao.checkUser(user);
+        return user1;
+    }
+
+    @Override
     public void updateUser(UserInfo user) {
         userInfoDao.updateUser(user);
     }
@@ -42,7 +49,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Override
     public void insertUser(UserInfo user) {
         //用户记录数据的插入
-        userInfoDao.insertUser(user);
+       userInfoDao.insertUser(user);
     }
 
     @Override

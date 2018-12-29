@@ -4,31 +4,23 @@
 
 <mapper namespace="com.example.springboot.dao.UserInfoDao">
     <!--查询所有 用户数据-->
-    <select id="getUsers"  resultType="com.example.springboot.domain.UserInfo">
+    <select id="getUsers" resultType="com.example.springboot.domain.UserInfo">
          SELECT * FROM  users;
     </select>
- <!--可以通过任意的条件信息来进行过滤查询-->
-    <select id="getUser" parameterType="com.example.springboot.domain.UserInfo" resultType="com.example.springboot.domain.UserInfo">
+    <!--可以通过任意的条件信息来进行过滤查询-->
+    <select id="getUser" parameterType="com.example.springboot.domain.UserInfo"
+            resultType="com.example.springboot.domain.UserInfo">
         SELECT
-        id,
-        name,
-        age
+        *
         FROM
         users
-        <where>
-            <if test="id != null">
-                id = #{id}
-            </if>
-            <if test="name != null">
-                and name like "%"#{name}"%"
-            </if>
-            <if test="age != null">
-                and age = ${age}
-            </if>
-        </where>
+        WHERE users.id = #{id}
+    </select>
+    <select id="checkUser" parameterType="com.example.springboot.domain.User" resultType="com.example.springboot.domain.UserInfo">
+          SELECT * FROM users WHERE users.username = #{username} and users.password = #{password}
     </select>
     <!--更新数据库中的某一条记录-->
-    <update id="updateUser" parameterType="com.example.springboot.domain.UserInfo" >
+    <update id="updateUser" parameterType="com.example.springboot.domain.UserInfo">
         UPDATE users SET
         users.name=#{name},
         users.age=#{age}
@@ -37,9 +29,9 @@
     </update>
     <!--数据插入，插入一条记录数据-->
     <insert id="insertUser" parameterType="com.example.springboot.domain.UserInfo">
-     INSERT INTO users (id, NAME, age)
+     INSERT INTO users (username, password, name,sex,phoneNum,mail)
      VALUES
-	(#{id}, #{name}, #{age})
+	(#{username},#{password},#{name},#{sex},#{phoneNum},#{mail})
     </insert>
 
     <!--循环遍历插入一个集合数据--><!--删除表中的某一条记录数据-->
@@ -51,11 +43,11 @@
         (id,name,age)
         VALUES
         <foreach collection="list" item="item" index="index" separator=",">
-        (#{item.id},
-        #{item.name},
-        #{item.age}
-        )
-    </foreach>
+            (#{item.id},
+            #{item.name},
+            #{item.age}
+            )
+        </foreach>
     </insert>
     <!--插入一个map类型的数据-->
     <!--<insert id="addUserMap" parameterType="java.util.Map" >

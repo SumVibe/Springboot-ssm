@@ -1,5 +1,6 @@
 package com.example.springboot.dao;
 
+import com.example.springboot.domain.User;
 import com.example.springboot.domain.UserInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -26,4 +27,6 @@ public interface UserInfoDao {
     int deleteUser(Integer id);
     //向数据库中添加一个list集合
     void addUsers(List list);
+    //验证用户信息
+    UserInfo checkUser(User user);
 }

@@ -1,5 +1,6 @@
 package com.example.springboot.service;
 
+import com.example.springboot.domain.User;
 import com.example.springboot.domain.UserInfo;
 
 import java.util.List;
@@ -16,6 +17,9 @@ public interface UserInfoService {
 
     //根据特定的一个属性值来查找某一条记录
     UserInfo getUser(UserInfo userInfo);
+
+    //根据用户名密码查询数据库
+    UserInfo checkUser(User user);
 
     //更新某一条记录
     void updateUser(UserInfo user);

@@ -26,6 +26,11 @@ logging:
   level:
     com.simons.cn.springbootdemo.dao.system:
       debug
+# mybatis plus 指定文件的扫描路径 config-location: classpath:mappers/*.xml
+#mybatis-plus:
+  #mapper-locations: classpath:mappers/*.xml
 
+# springboot 中去掉不必要的日志打印信息配置
+logging.level.org.springframework.boot.autoconfigure: ERROR
 
 
