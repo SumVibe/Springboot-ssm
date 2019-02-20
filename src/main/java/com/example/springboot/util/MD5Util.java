@@ -5,7 +5,7 @@ import java.security.MessageDigest;
 /**
  * @Author: xuxufu
  * @Date: 18.11.9 10:21
- * @Description: MD5Util对字符串进行
+ * @Description: MD5Util对字符串进行加密处理
  */
 public class MD5Util {
     public static String md5Encode(String inStr) throws Exception {

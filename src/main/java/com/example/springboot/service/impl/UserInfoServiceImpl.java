@@ -47,9 +47,10 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public void insertUser(UserInfo user) {
+    public int insertUser(UserInfo user) {
         //用户记录数据的插入
-       userInfoDao.insertUser(user);
+        int n = userInfoDao.insertUser(user);
+        return n;
     }
 
     @Override

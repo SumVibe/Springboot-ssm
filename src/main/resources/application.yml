@@ -33,4 +33,11 @@ logging:
 # springboot 中去掉不必要的日志打印信息配置
 logging.level.org.springframework.boot.autoconfigure: ERROR
 
+# 配置服务器的地址
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+
 

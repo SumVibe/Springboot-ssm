@@ -22,7 +22,7 @@ public interface UserInfoDao {
     //更新某一条记录中的某个字段值
     void updateUser(UserInfo user);
     //数据库中添加一条记录数据
-    void insertUser(UserInfo user);
+    int insertUser(UserInfo user);
     //删除数据库中的一条记录数据
     int deleteUser(Integer id);
     //向数据库中添加一个list集合
