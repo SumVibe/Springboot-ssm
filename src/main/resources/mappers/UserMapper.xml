@@ -45,14 +45,12 @@
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.id},
             #{item.name},
-            #{item.age}
-            )
+            #{item.age})
         </foreach>
     </insert>
     <!--插入一个map类型的数据-->
-    <!--<insert id="addUserMap" parameterType="java.util.Map" >
+    <!--<insert id="addUserMap" parameterType="Java.util.Map" >
 
 
     </insert>-->
-
 </mapper>

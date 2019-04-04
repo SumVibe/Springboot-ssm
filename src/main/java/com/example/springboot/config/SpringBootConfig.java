@@ -13,7 +13,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @Configuration
 public class SpringBootConfig {
-    //在Application启动类中注册WebMvcConfigurer
+   /**
+    * 在Application启动类中注册WebMvcConfigure 来解决跨域请求的问题
+    * @Date: 10:35 19.3.20
+    * @param
+    * @return: org.springframework.web.servlet.config.annotation.WebMvcConfigurer
+    **/
     @Bean
     public WebMvcConfigurer webMvcConfigurer() {
         return new WebMvcConfigurerAdapter() {

@@ -1,7 +1,7 @@
 # mysql数据库的相关配置
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/ssm_sql?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://192.168.74.1:3306/ssm_sql?useUnicode=true&characterEncoding=utf8
     username: root
     password: root
     driver: com.mysql.jdbc.Driver
@@ -24,8 +24,8 @@ mybatis:
 # mybatis执行SQL语句的配置
 logging:
   level:
-    com.simons.cn.springbootdemo.dao.system:
-      debug
+    com.example.springboot.dao: debug
+
 # mybatis plus 指定文件的扫描路径 config-location: classpath:mappers/*.xml
 #mybatis-plus:
   #mapper-locations: classpath:mappers/*.xml
@@ -35,7 +35,7 @@ logging.level.org.springframework.boot.autoconfigure: ERROR
 
 # 配置服务器的地址
 server:
-  port: 8080
+  port: 8090
   servlet:
     context-path: /
 
