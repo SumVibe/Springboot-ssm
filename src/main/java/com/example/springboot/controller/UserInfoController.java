@@ -1,5 +1,4 @@
 package com.example.springboot.controller;
-import com.alibaba.fastjson.JSONObject;
 import com.example.springboot.domain.User;
 import com.example.springboot.domain.UserInfo;
 import com.example.springboot.service.UserInfoService;
@@ -48,7 +47,6 @@ public class UserInfoController {
     @ResponseBody
     public UserInfo getUser(@RequestBody UserInfo userInfo) {
         UserInfo user = userInfoService.getUser(userInfo);
-        user.setPassword(ParamValues.CODE_TYPE.MSG_TFBOY);
         return user;
     }
 
@@ -128,7 +126,6 @@ public class UserInfoController {
     @ResponseBody
     public String login(@ApiParam(value = "用户名", required = true) @RequestParam("username") String username,
                         @ApiParam(value = "用户名", required = true) @RequestParam("password") String password) throws Exception {
-        //定义全局变量
         String flag = "";
         User user = new User();
         user.setUsername(username);
@@ -143,23 +140,4 @@ public class UserInfoController {
         return flag;
     }
 
-   /**
-    * @Description: 调用方法来查询星座运势
-    * @Param: [appid, appSecret]
-    * @return: com.alibaba.fastjson.JSONObject
-    **/
-    @ApiOperation(value = "查询星座运势", notes = "查询星座运势")
-    @RequestMapping(value = "/queryStarLuck", method = RequestMethod.POST)
-    public void queryStarLuck(@ApiParam(value = "应用id", required = true) @RequestParam("appid") String appid,
-                                    @ApiParam(value = "秘钥", required = true) @RequestParam("appSecret") String appSecret){
-       /* String res=new ShowApiRequest("http://route.showapi.com/872-1",appid,appSecret)
-                .addTextPara("star","shizi")
-                .addTextPara("needTomorrow","0")
-                .addTextPara("needWeek","0")
-                .addTextPara("needMonth","0")
-                .addTextPara("needYear","0")
-                .post();
-        JSONObject json = JSONObject.parseObject(res)*/;
-
-    }
 }

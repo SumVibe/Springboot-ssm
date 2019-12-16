@@ -2,6 +2,7 @@ package com.example.springboot.service;
 
 import com.example.springboot.domain.User;
 import com.example.springboot.domain.UserInfo;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
  * @Date: 18.8.9 16:08
  * @Description:
  */
+
 public interface UserInfoService {
 
     /**
@@ -18,6 +20,7 @@ public interface UserInfoService {
      * @param
      * @return java.util.List<com.example.springboot.domain.UserInfo>
      **/
+
     List<UserInfo> getUsers();
 
     /**
@@ -40,6 +43,7 @@ public interface UserInfoService {
     void updateUser(UserInfo user);
 
     //插入一条数据记录
+    @Transactional
     int insertUser(UserInfo user);
 
     //删除一条数据库记录

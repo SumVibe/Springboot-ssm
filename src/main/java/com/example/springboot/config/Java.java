@@ -7,7 +7,7 @@ package com.example.springboot.config;
  */
 public class Java {
     public static void main(String[] args) {
-        String str = "ADF_JJJ";
+        String str = "15448_mkmmk_nnjnjn/_";
         String string = StringUtil.underlineToCamel(str);
         System.out.println(string);
     }
