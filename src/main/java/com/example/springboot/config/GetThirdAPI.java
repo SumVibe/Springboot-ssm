@@ -16,7 +16,6 @@ import java.util.LinkedHashMap;
  * @Description:
  *
  */
-
 public class GetThirdAPI {
     public static void main(String[] args) {
         while (true) {

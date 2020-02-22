@@ -14,9 +14,32 @@
         *
         FROM
         users
-        WHERE users.id = #{id}
+        <where>
+            <if test="id !=null and id !=''">
+                and ID =#{id}
+            </if>
+            <if test="username !=null and username !=''">
+                and USERNAME =#{username}
+            </if>
+            <if test=" password !=null and password !=''">
+                and PASSWORD =#{password}
+            </if>
+            <if test=" name !=null and name !=''">
+                and NAME =#{name}
+            </if>
+            <if test=" sex !=null and sex !=''">
+                and SEX =#{sex}
+            </if>
+            <if test=" phoneNum !=null and phoneNum !=''">
+                and PHONENUM =#{phoneNum}
+            </if>
+            <if test="  mail !=null and mail !=''">
+                and MAIL =#{mail}
+            </if>
+        </where>
     </select>
-    <select id="checkUser" parameterType="com.example.springboot.domain.User" resultType="com.example.springboot.domain.UserInfo">
+    <select id="checkUser" parameterType="com.example.springboot.domain.User"
+            resultType="com.example.springboot.domain.UserInfo">
           SELECT * FROM users WHERE users.username = #{username} and users.password = #{password}
     </select>
     <!--更新数据库中的某一条记录-->

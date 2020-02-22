@@ -21,7 +21,7 @@ spring:
     #redis数据库索引(默认为0)
     database : 0
     #redis服务器地址
-    host: 192.168.43.40
+    host: 127.0.0.1
     #redis服务器连接端口
     port: 6379
     #redis连接密码
@@ -45,7 +45,7 @@ mybatis:
 # mybatis执行SQL语句的配置
 logging:
   level:
-    com.example.springboot.dao: debug
+    com.example.springboot.dao: info
 
 # mybatis plus 指定文件的扫描路径 config-location: classpath:mappers/*.xml
 #mybatis-plus:

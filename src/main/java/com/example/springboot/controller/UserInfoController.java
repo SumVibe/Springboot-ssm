@@ -31,7 +31,7 @@ public class UserInfoController {
     * @return: Java.util.List<com.example.springboot.domain.UserInfo>
     **/
     @ApiOperation(value = "获取User列表", notes = "获取所有User对象")
-    @RequestMapping(value = "/getUsers", method = RequestMethod.POST)
+    @RequestMapping(value = "/getUsers", method = RequestMethod.GET)
     public List<UserInfo> getUsers() {
         List<UserInfo> users = (List<UserInfo>) userInfoService.getUsers();
         return users;
@@ -45,7 +45,7 @@ public class UserInfoController {
     @ApiOperation(value = "获取单个用户信息", notes = "获取单个用户的对象属性")
     @RequestMapping(value = "/getUser", method = RequestMethod.POST)
     @ResponseBody
-    public UserInfo getUser(@RequestBody UserInfo userInfo) {
+    public UserInfo getUser(UserInfo userInfo) {
         UserInfo user = userInfoService.getUser(userInfo);
         return user;
     }
